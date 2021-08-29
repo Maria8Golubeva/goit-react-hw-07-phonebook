@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { connect } from "react-redux";
+
+import ContactsList from "./Components/ContactsList/ContactsList";
+import Form from "./Components/Form";
+import Filter from "./Components/Filter";
+import ListItem from "./Components/ContactsList/ListItem";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Form />
+      <Filter />
+      <ContactsList>
+        <ListItem  />
+      </ContactsList>
     </div>
   );
-}
+};
 
-export default App;
+export default connect(null)(App);
